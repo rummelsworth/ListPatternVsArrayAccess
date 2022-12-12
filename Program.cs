@@ -28,4 +28,12 @@ public class ABCDRetrieval
         var (a, b, c, d) = (abcd[0], abcd[1], abcd[2], abcd[3]);
         return a + b + c + d;
     }
+
+    [Benchmark]
+    public double ArrayAccessHighToLow()
+    {
+        var abcd = ABCD();
+        var (d, c, b, a) = (abcd[3], abcd[2], abcd[1], abcd[0]);
+        return a + b + c + d;
+    }
 }
